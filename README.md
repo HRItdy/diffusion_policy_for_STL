@@ -9,6 +9,7 @@ sudo add-apt-repository universe
 
 sudo apt update && sudo apt install curl
 sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 ```
 May have some connection errors, but can proceed to run:
 ```
@@ -40,7 +41,7 @@ If encounter:
 ```
 E: Unable to locate package ros-humble-moveit-py
 ```
-Then run 
+Remember to run 
 ```
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 ```
