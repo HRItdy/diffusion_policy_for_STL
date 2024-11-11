@@ -16,5 +16,14 @@ sudo apt install ros-humble-desktop
 sudo apt install ros-humble-ros-base
 sudo apt install ros-dev-tools
 ```
+## Install isaac
+Reference:
+https://isaac-sim.github.io/IsaacLab/main/source/setup/installation/index.html
+```
+sudo snap install --classic cmake
+sudo apt install build-essential
+```
+Then follow the instructions in the Nvidia official document.
+
 In-painting
 CBF
