@@ -26,7 +26,7 @@ sudo apt install build-essential
 ```
 Then follow the instructions in the Nvidia official document.
 
-## Integrate moveit with isaac
+## Integrate moveIt with isaac
 Reference: 
 https://www.youtube.com/watch?v=pGje2slp6-s
 
@@ -44,6 +44,13 @@ E: Unable to locate package ros-humble-moveit-py
 Remember to run 
 ```
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+```
+## Configure moveIt 
+```
+source /opt/ros/humble/setup.bash # Enable ros2
+cd moveit2_UR5/
+colcon build
+source install/setup.bash # Add the robot_description into ros path
 ```
 
 In-painting
