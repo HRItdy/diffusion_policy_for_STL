@@ -76,5 +76,20 @@ sudo apt-get install -y \
     mesa-common-dev
 ```
 
+Need to install `topic-based-ros2-control` [repo](https://github.com/PickNikRobotics/topic_based_ros2_control/blob/main/doc/installation.md)
+```
+sudo apt-get install ros-humble-topic-based-ros2-control
+```
+If encounter 
+```
+E: Unable to locate package 
+```
+or 
+```
+
+```
+
+when run 
+
 In-painting
 CBF
