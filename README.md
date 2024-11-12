@@ -82,14 +82,32 @@ sudo apt-get install ros-humble-topic-based-ros2-control
 ```
 If encounter 
 ```
-E: Unable to locate package 
+E: Unable to locate package topic-based-ros2-control
 ```
 or 
 ```
-
+Err:8 http://packages.ros.org/ros2/ubuntu jammy InRelease
+  The following signatures couldn't be verified because the public key is not available: NO_PUBKEY F42ED6FBAB17C654
+Reading package lists... Done
+W: GPG error: http://packages.ros.org/ros2/ubuntu jammy InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY F42ED6FBAB17C654
+E: The repository 'http://packages.ros.org/ros2/ubuntu jammy InRelease' is not signed.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.
+N: See apt-secure(8) manpage for repository creation and user configuration details.
 ```
 
-when run 
+when run `sudo apt update`, this is probably because of the key is not well installed.
+
+In my case, it's because I declared to use the key under `/usr/share/keyrings/` in `/etc/apt/sources.list.d/ros2.list`, but actually the key is installed in other place. 
+
+Try: 
+```
+# Download and dearmor the key to place it in the keyrings folder
+curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo gpg --dearmor -o /usr/share/keyrings/ros-archive-keyring.gpg
+```
+and make sure the content in `etc/apt/sources.list.d/ros2.list` is:
+```
+deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(lsb_release -cs) main
+```
 
 In-painting
 CBF
