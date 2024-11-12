@@ -51,6 +51,29 @@ source /opt/ros/humble/setup.bash # Enable ros2
 cd moveit2_UR5/
 colcon build
 source install/setup.bash # Add the robot_description into ros path
+
+ros2 launch moveit_setup_assistant setup_assistant.launch.py # Run moveit assistant
+```
+
+If encounter:
+```
+[moveit_setup_assistant-1] [rviz_rendering:error] RenderingAPIException: Unable to create a suitable GLXContext in GLXContext::GLXContext at ./.obj-x86_64-linux-gnu/ogre-v1.12.1-prefix/src/ogre-v1.12.1/RenderSystems/GLSupport/src/GLX/OgreGLXContext.cpp (line 60), at ./src/rviz_rendering/ogre_logging.cpp:70
+[moveit_setup_assistant-1] [rviz_rendering:error] rviz::RenderSystem: error creating render window: RenderingAPIException: Unable to create a suitable GLXContext in GLXContext::GLXContext at ./.obj-x86_64-linux-gnu/ogre-v1.12.1-prefix/src/ogre-v1.12.1/RenderSystems/GLSupport/src/GLX/OgreGLXContext.cpp (line 60), at ./src/rviz_rendering/render_system.cpp:576
+[moveit_setup_assistant-1] [rviz_rendering:error] Unable to create the rendering window after 100 tries, at ./src/rviz_rendering/render_system.cpp:530
+[moveit_setup_assistant-1] terminate called after throwing an instance of 'std::runtime_error'
+[moveit_setup_assistant-1]   what():  Unable to create the rendering window after 100 tries
+[ERROR] [moveit_setup_assistant-1]: process has died [pid 983204, exit code -6, cmd '/opt/ros/humble/lib/moveit_setup_assistant/moveit_setup_assistant --ros-args'].
+```
+
+This means the OpenGL is not configured properly.
+Try to install the basic OpenGL development packages:
+```
+sudo apt-get update
+sudo apt-get install -y \
+    libgl1-mesa-dev \
+    libglu1-mesa-dev \
+    freeglut3-dev \
+    mesa-common-dev
 ```
 
 In-painting
