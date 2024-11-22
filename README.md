@@ -112,7 +112,15 @@ deb [signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.
 You can find all the `tfds` dataset here https://tensorflow.google.cn/datasets/catalog/overview.
 Refer to `Robotics` category and there lists the feature and structure of each individual dataset.
 
-## TODO
-1. Write the launch file to run two realsense cameras simultaneously.
+## TODO --one week
+1. Find the correct position for the global realsense camera.
+2. Write the launch file to run two realsense cameras simultaneously.
+3. Merge the demo_robot script in diffusion_policy with our itap pipeline.
+   - Dispose the SpaceMouse, rs for realsense and rtde for UR robot
+   - Use the video recoder to record the video directly from the ros topic
+   - Use the keyboard to manage when start the recording and when stop
+   - Figure out how to record the action of robot
+
+
 In-painting
 CBF
