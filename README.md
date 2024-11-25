@@ -122,6 +122,10 @@ Refer to `Robotics` category and there lists the feature and structure of each i
    - Figure out how to record the action of robot
    - Go through the dataset customization part in little red book
 
+## Problem now:
+1. How to design the dataset? Seems that there are episode_end parameter need to be specified.
+2. How to use the accumulator?
+
 
 In-painting
 CBF
