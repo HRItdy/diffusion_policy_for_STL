@@ -125,6 +125,8 @@ Refer to `Robotics` category and there lists the feature and structure of each i
 ## Problem now:
 1. How to design the dataset? Seems that there are episode_end parameter need to be specified.
 2. How to use the accumulator?
+3. What's the difference between `action` and `robot_eef_pose`? The same item at the beginning is the padding?
+4. Based on the previous structure to curate own dataset.
 
 
 In-painting
