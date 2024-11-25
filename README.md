@@ -120,6 +120,7 @@ Refer to `Robotics` category and there lists the feature and structure of each i
    - Use the video recoder to record the video directly from the ros topic
    - Use the keyboard to manage when start the recording and when stop
    - Figure out how to record the action of robot
+   - Go through the dataset customization part in little red book
 
 
 In-painting
